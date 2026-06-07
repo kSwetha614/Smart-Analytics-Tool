@@ -1,0 +1,14 @@
+st.header("📋 Bar Chart")
+
+bar_col = st.selectbox(
+    "Select Column for Bar Chart",
+    numeric_columns
+)
+
+bar_data = df[bar_col].value_counts().reset_index()
+
+bar_data.columns = ["Value", "Count"]
+
+fig = px.bar(bar_data, x="Value", y="Count")
+
+st.plotly_chart(fig)
