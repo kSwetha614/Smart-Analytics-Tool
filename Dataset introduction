@@ -1,0 +1,13 @@
+📌 Dataset Introduction
+
+This dataset contains information about Movies and TV Shows available on Netflix.
+
+Dataset Shape:
+(8807, 12)
+
+Column Names:
+show_id, type, title, director, cast, country,
+date_added, release_year, rating, duration, listed_in
+
+Sample Dataset:
+| title | type | country | release_year |
