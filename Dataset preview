@@ -1,0 +1,13 @@
+import pandas as pd
+import streamlit as st
+
+# CSV Upload
+uploaded_file = st.file_selectbox("Choose a CSV file", type="csv")
+
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file)
+    
+    # Dataset Preview
+    st.subheader("Dataset Preview")
+    st.write(f"Shape: {df.shape[0]} rows, {df.shape[1]} columns")
+    st.dataframe(df.head(10)) # Interactive table showing first 10 rows
