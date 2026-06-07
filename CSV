@@ -1,0 +1,22 @@
+import streamlit as st
+import pandas as pd
+
+def csv_uploader():
+    st.title("Smart Analytics Tool")
+    
+    # CSV Upload Feature
+    uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+    
+    if uploaded_file is not None:
+        # Read the dataset
+        df = pd.read_csv(uploaded_file)
+        st.success("File successfully uploaded!")
+        
+        # Dataset Preview (Requirement 2)
+        st.subheader("Dataset Preview")
+        st.write(df.head())
+        
+        return df
+
+# Execute
+data = csv_uploader()
