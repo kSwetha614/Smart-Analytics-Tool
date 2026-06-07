@@ -1,0 +1,21 @@
+import pandas as pd
+
+def missing_value_analysis(df):
+    # Count missing values per column
+    missing_count = df.isnull().sum()
+    
+    # Calculate percentage of missing values
+    missing_percentage = (df.isnull().sum() / len(df)) * 100
+    
+    # Combine into a summary table
+    analysis_df = pd.DataFrame({
+        'Missing Values': missing_count,
+        'Percentage (%)': missing_percentage.round(2)
+    })
+    
+    # Filter to show only columns that actually have missing values
+    return analysis_df[analysis_df['Missing Values'] > 0]
+
+# Example usage:
+# df = pd.read_csv('your_file.csv')
+# print(missing_value_analysis(df))
