@@ -1,0 +1,15 @@
+st.header("📉 Scatter Plot")
+
+x_col = st.selectbox(
+    "Select X-axis",
+    numeric_columns
+)
+
+y_col = st.selectbox(
+    "Select Y-axis",
+    numeric_columns
+)
+
+fig = px.scatter(df, x=x_col, y=y_col)
+
+st.plotly_chart(fig)
