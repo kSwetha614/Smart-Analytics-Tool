@@ -1,0 +1,10 @@
+st.header("📊 Histogram")
+
+hist_col = st.selectbox(
+    "Select Column for Histogram",
+    numeric_columns
+)
+
+fig = px.histogram(df, x=hist_col)
+
+st.plotly_chart(fig)
